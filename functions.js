@@ -17,3 +17,31 @@ function toBeyond (num){
 }
 
 toBeyond(Infinity);
+
+function decode(str){
+    const arr = str.split(" ");
+    let code = "";
+    for (let i=0; i<arr.length; i++){
+        switch(arr[i][0]){
+            case "a":
+               code += arr[i][1];
+               break;
+            case "b":
+                code += arr[i][2];
+                break;
+            case "c":
+                code += arr[i][3];
+                break; 
+            case "d":
+                code += arr[i][4];
+                break; 
+            default:
+                code += " ";
+
+
+        }
+    } console.log(code);
+
+}
+
+decode('craft block argon meter bells brown croon droop')
