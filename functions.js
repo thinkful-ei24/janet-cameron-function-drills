@@ -62,18 +62,49 @@ case 'June':
 case 'September':
 case 'November':
 console.log(`${month} has 30 days.`);
+break;
 case 'February':
 if(leapYear){
     console.log(`${month} has 29 days.`)
 } else if (!leapYear){
     console.log(`${month} has 28 days.`)
 }
+break;
 default :
-console.log("Please enter valid month.")
+throw new Error ("Please enter valid month.");
 }
 
 }
 
-daysInMonth("Feb", true);
+daysInMonth("February", true);
 
+
+function rockPaperScissors(num){
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+    if (num !==1 && num !==2 && num!==3){
+        throw new Error("Must enter either 1, 2, or 3")
+    }
+    switch(randomNo){
+        case num:
+            console.log("It's a tie!");
+            break;
+        case 1:
+            if (num===2){
+                console.log("Paper beats rock. We win!");
+            }else if(num===3){console.log("Rock beats scissors. Computer wins!")}
+            break;
+        case 2:
+            if (num===1){
+                console.log("Paper beats rock. Computer wins!");
+            }else if(num===3){console.log("Scissors beat paper. We win!")}
+            break;
+        case 3:
+            if (num===1){
+                console.log("Rock beats scissors. We win!");
+            }else if(num===2){console.log("Scissors beat paper. Computer wins!")}
+            break;    
+    }
+}
+
+rockPaperScissors(3);
 
